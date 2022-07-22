@@ -48,7 +48,16 @@ const getUserChoice = userInput => {
   
   
   const playGame = () =>{
-    const userChoice = getUserChoice(prompt("Choose your weapon:"));
+     let validAns = false;
+ var userChoice;
+ while (validAns !=true){
+   userChoice = getUserChoice(prompt("Choose your weapon:"));
+   if (userChoice === "rock" || userChoice === "paper" || userChoice === "scissors"){
+     validAns = true;
+   } else{
+      validAns = false;
+   }
+ }
     const computerChoice = getComputerChoice();
     console.log(`You picked ${userChoice}`);
     console.log(`The computer picked ${computerChoice}`);
